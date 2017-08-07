@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Quoting Dojo</title>
+  </head>
+  <body>
+      <div id='container'>
+        <h1>Here are the awesome quotes!</h1>
+
+        <% for (var i in quotes) { %>
+            <p class='quote'>"<%= quotes[i].content %>"</p>
+            <p> - <%= quotes[i].poster%></p>
+            <p class='time'><%= quotes[i].posted_at %></p>
+            <hr>
+        <% } %>
+
+        <a href='/'><button>Go back</button></a>
+      </div>
+    
+  </body>
+</html>
