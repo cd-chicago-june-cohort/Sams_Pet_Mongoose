@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <title>Message Board</title>
+    </head>
+    <body>
+        <div class='container-fluid'>
+            <div class='row'><div class='col-md-8 col-md-offset-2'>
+                <h1 class='text-center'>The Coding Dojo Message Board</h1>
+                <hr class='style-one'>
+                <form action='/post' method='post'>
+                    <div class='form-group'>
+                        <label class='msg-label' for='name'>Your Name:</label>
+                        <input type='text' class='form-control' name='name'>
+                        <label class='msg-label' for='post'>Leave a Message:</label>
+                        <textarea class='form-control' id='post' name='post'></textarea>
+                    </div>
+                    <input class='btn btn-primary' id='submit' type='submit' value='Post'>
+                </form>
+            </div></div>
+            <% for (var i in posts) { %>
+                <div class='row'><div class='col-md-8 col-md-offset-2'>
+                    <div>Name: <%=posts[i].poster%></div>
+                    <div>Message: <%=posts[i].content%></div>
+                    <div class='col-md-6 col-md-offset-3'>
+                        <form action='/comment/<%=posts[i]._id%>' method='post'>
+                            <label class='msg-label' for='name'>Your Name:</label>
+                            <input type='text' class='form-control' name='name'>
+                            <label class='msg-label' for='post'>Leave a Comment:</label>
+                            <textarea class='form-control' id='comment' name='comment'></textarea>
+                            <input class='btn btn-primary' type='submit' value='Post'>
+                        </form>
+                    </div>
+                </div></div>
+                 <% for (var j in posts[i].comments) { %>
+                    <div class='row'><div class='col-md-8 col-md-offset-2 comment-box'>
+                        <div>Name: posts[i].comments[j].comment_poster%></div>
+                        <div>Comment: posts[i].comments[j].comment_content%></div>
+                    </div></div>
+                <% } %> 
+                <hr class='style-two'>
+            <% } %>
+        </div>
+        </body>
+</html>

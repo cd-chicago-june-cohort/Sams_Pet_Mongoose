@@ -1,0 +1,33 @@
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background: blue;
+    background-image: linear-gradient(to right, #ccc, blue, #ccc);
+}
+
+
+#post{
+    height: 150px;
+}
+
+#submit{
+    width: 100px;
+    display: block;
+    float: right
+}
+
+.msg-label{
+    font-size: 18px;
+}
+
+.comment-box{
+    margin: 10px;
+    border: 1px solid red;
+}
