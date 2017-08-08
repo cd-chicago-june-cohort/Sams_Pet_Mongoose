@@ -25,23 +25,24 @@
             </div></div>
             <% for (var i in posts) { %>
                 <div class='row'><div class='col-md-8 col-md-offset-2'>
-                    <div>Name: <%=posts[i].poster%></div>
-                    <div>Message: <%=posts[i].content%></div>
+                    <div class='msg-txt'>Name: <%=posts[i].poster%></div>
+                    <div class='msg-txt'>Message: <%=posts[i].content%></div>
                     <div class='col-md-6 col-md-offset-3'>
                         <form action='/comment/<%=posts[i]._id%>' method='post'>
-                            <label class='msg-label' for='name'>Your Name:</label>
+                            <label  for='name'>Your Name:</label>
                             <input type='text' class='form-control' name='name'>
-                            <label class='msg-label' for='post'>Leave a Comment:</label>
+                            <label  for='post'>Leave a Comment:</label>
                             <textarea class='form-control' id='comment' name='comment'></textarea>
-                            <input class='btn btn-primary' type='submit' value='Post'>
+                            <input class='btn btn-primary' type='submit' id='comment-btn' value='Comment'>
                         </form>
                     </div>
                 </div></div>
                  <% for (var j in posts[i].comments) { %>
-                    <div class='row'><div class='col-md-8 col-md-offset-2 comment-box'>
-                        <div>Name: posts[i].comments[j].comment_poster%></div>
-                        <div>Comment: posts[i].comments[j].comment_content%></div>
-                    </div></div>
+                        <% if (posts[i].comments[j].comment_poster) { %>
+                            <div class='row'><div class='col-md-8 col-md-offset-2 comment-box'>
+                                <div><span class='user'><%=posts[i].comments[j].comment_poster%>: </span> <%=posts[i].comments[j].comment_content%></div>
+                            </div></div>
+                        <% } %>
                 <% } %> 
                 <hr class='style-two'>
             <% } %>
