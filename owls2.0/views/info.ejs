@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Owls!!! :)</title>
+  </head>
+  <body>
+      <div><a href='/'><button class='add'>Home</button></a> | <a href='/owls/edit/<%= owl._id%>'><button class='add'>Edit</button></a> | <a href='/destroy/<%= owl._id%>'><button class='add'>Delete</button></a></div>
+      <div id='test-contain'>
+        <div><img class="prof-pic frame" src="/<%= owl.prof_pic %>" ></div>
+        <h3><%= owl.name %></h3>
+        <div>Age: <%= owl.age %></div>
+        <div>Spirit Person: <%= owl.spirit_person %></div>
+      </div>
+  </body>
+</html>

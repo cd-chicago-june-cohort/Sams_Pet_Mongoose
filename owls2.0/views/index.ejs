@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Owls!!! :)</title>
+  </head>
+  <body>
+      <div><a href='/owls/new'><button class='add'>Add an Owl to the Parliament</button></a></div>
+      <h1>A Parliament of Owls</h1>
+      <% for (var i in owls) { %>
+        <div class='owl-box'>
+            <a href='owls/<%= owls[i]._id%>' ><img class='prof-pic' src="<%= owls[i].prof_pic %>"></a>
+            <h3 class='home-name'> <%= owls[i].name %></h3>
+        </div>
+    <% } %>
+  </body>
+</html>
